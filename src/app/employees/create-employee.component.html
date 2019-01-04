@@ -3,8 +3,8 @@
   <div class="panel-heading">
     <h3 class="panel-title">Create Employee</h3>
   </div>
-  <div class="panel-body" [class.has-error]="fullNameControl.invalid && fullNameControl.touched">
-    <div class="form-group">
+  <div class="panel-body">
+    <div class="form-group" [class.has-error]="fullNameControl.invalid && fullNameControl.touched">
       <label for="fullName" class="control-label">Full name</label>
       <input type="text" name="fullName" required [(ngModel)]="fullName" id="fullName" class="form-control" 
           #fullNameControl="ngModel">
