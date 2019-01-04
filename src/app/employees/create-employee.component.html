@@ -1,4 +1,4 @@
-<form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)"> <!-- employeeForm is a template reference variable which is set to ngForm. now we can access properties and features form using employeeForm-->
+<form #employeeForm="ngForm" ngNativeValidate (ngSubmit)="saveEmployee(employeeForm)"> <!-- employeeForm is a template reference variable which is set to ngForm. now we can access properties and features form using employeeForm-->
 <div class="panel panel-primary" >
   <div class="panel-heading">
     <h3 class="panel-title">Create Employee</h3>
