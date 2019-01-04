@@ -57,18 +57,38 @@
           </div>
 
           <div class="form-group">
-              <label for="department" class="checkbox-inline">
+              <label>
                 Department
              </label>   
              <select name="department" id="department" [(ngModel)] ="department" class="form-control ">
               <option *ngFor="let dept of departments" [value]="dept.id">
                 {{dept.name}}
               </option>
-
              </select>
-
-
            </div>
+
+           <div class="row">
+             <div class="form-group col-md-4">
+               <label for="dateOfBirth">Date of Birth</label>
+               <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth"
+               class="form-control" type="text" bsDatepicker [bsConfig]="datePickerConfig" />
+             </div>
+           </div>
+
+           <div class="form-group">
+              <label for="photoPath">Photo Path</label>
+              <input type="text" name="photoPath" [(ngModel)]="photoPath" id="phoneNumber" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <button type="button" class="btn btn-primary" (click)="togglePhotoPreview()"> 
+                {{previewPhoto?"Hide ": "Show "}}Preview
+              </button>
+            </div>
+
+            <div class="form-group">
+              <img [src]="photoPath" height="200" width="200" alt="" *ngIf="previewPhoto">
+            </div>
 
   </div>
 
