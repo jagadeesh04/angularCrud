@@ -1,3 +1,4 @@
+<form #employeeForm="ngForm"> <!-- employeeForm is a template reference variable which is set to ngForm. now we can access properties and features form using employeeForm-->
 <div class="panel panel-primary" >
   <div class="panel-heading">
     <h3 class="panel-title">Create Employee</h3>
@@ -5,11 +6,11 @@
   <div class="panel-body">
     <div class="form-group">
       <label for="fullName">Full name</label>
-      <input type="text" id="fullName" class="form-control">
+      <input type="text" name="fullName" [(ngModel)]="fullName" id="fullName" class="form-control">
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" id="email" class="form-control">
+        <input type="text" name="email" [(ngModel)]="email" id="email" class="form-control">
       </div>
   </div>
 
@@ -17,3 +18,7 @@
     <button class="btn btn-primary" type="submit">Save</button>
   </div>
 </div>
+</form>
+
+
+Angular Generated Form Model: {{employeeForm.value | json}}
