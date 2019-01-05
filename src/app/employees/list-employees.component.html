@@ -1,13 +1,8 @@
-<!-- <div class="panel panel-primary" *ngFor="let employee of employees">
- <app-employeesdisplay-employee [employee]="employee"></app-employeesdisplay-employee>
-</div> -->
-
-
-<button (click)="nextEmployee()" class="btn btn-primary">
-View Next Employee
-</button>
-<br> <br>
-
-<app-employeesdisplay-employee [employee]="employeeToDisplay"></app-employeesdisplay-employee>
+<h1>
+  {{ dataFromChild }}
+</h1>
+<div class="panel panel-primary" *ngFor="let employee of employees">
+ <app-employeesdisplay-employee [employee]="employee" (notify)="handleNotify($event)"></app-employeesdisplay-employee>
+</div>
 
 
