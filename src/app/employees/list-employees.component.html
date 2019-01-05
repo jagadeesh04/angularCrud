@@ -1,8 +1,10 @@
-<h1>
-  {{ dataFromChild }}
+<h1 #h1Variable>
+
 </h1>
 <div class="panel panel-primary" *ngFor="let employee of employees">
- <app-employeesdisplay-employee [employee]="employee" (notify)="handleNotify($event)"></app-employeesdisplay-employee>
+ <div (click)="h1Variable.innerHTML = childComponent.getEmployeeNameAndGender()">
+  <app-employeesdisplay-employee [employee]="employee" #childComponent></app-employeesdisplay-employee>
+</div>
 </div>
 
 
