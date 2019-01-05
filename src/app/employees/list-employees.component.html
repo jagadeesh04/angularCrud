@@ -1,7 +1,9 @@
 
 <div class="panel panel-primary" *ngFor="let employee of employees">
 
+  <div (click)="onClick(employee.id)" class="pointCursor">
   <app-employeesdisplay-employee [employee]="employee" #childComponent></app-employeesdisplay-employee>
+  </div>
 </div>
 
 
